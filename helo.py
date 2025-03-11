@@ -3,6 +3,10 @@ import sqlite3
 import os
 import shutil
 
+if __name__ == '__main__':
+    port = int(os.environ.get("PORT", 8080))  # Utilise le port fourni par Railway/Render
+    app.run(host="0.0.0.0", port=port)
+
 app = Flask(__name__)
 app.secret_key = "secret_key"
 
