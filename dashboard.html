@@ -1,0 +1,19 @@
+<head>
+    <title>Tableau de bord</title>
+    <link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css'>
+</head>
+<body class='container mt-5'>
+    <h2 class='text-center'>📊 Tableau de bord</h2>
+    <form method='POST' action='/create_association' class='mb-4 p-3 bg-light rounded shadow'>
+        <input type='text' name='denomination' placeholder='Dénomination' class='form-control mb-2' required>
+        <input type='text' name='status' placeholder='Statut' class='form-control mb-2' required>
+        <input type='text' name='ville' placeholder='Ville' class='form-control mb-2' required>
+        <input type='text' name='quartier' placeholder='Quartier' class='form-control mb-2' required>
+        <input type='text' name='secteur' placeholder='Secteur d\'activité' class='form-control mb-2' required>
+        <button type='submit' class='btn btn-primary w-100'>Créer</button>
+    </form>
+    <h3>📌 Liste des associations</h3>
+    <ul class='list-group'>{% for association in associations %}<li class='list-group-item'><a href='/association/{{ association[0] }}'>{{ association[1] }}</a></li>{% endfor %}</ul>
+    <a href='/logout' class='btn btn-danger mt-3'>🚪 Déconnexion</a>
+</body>
+</html>
