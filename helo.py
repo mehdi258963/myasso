@@ -4,7 +4,7 @@ import os
 import shutil
 
 if __name__ == '__main__':
-    port = int(os.environ.get("PORT", 8080))  # Utilise le port fourni par Railway/Render
+    port = int(os.environ.get("PORT", 5000))  # Railway fournit automatiquement une valeur
     app.run(host="0.0.0.0", port=port)
 
 app = Flask(__name__)
